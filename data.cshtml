@@ -1,0 +1,29 @@
+@model TextFile
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Display</title>
+    <style>
+        /* Remove default list styling */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        /* Set background color of first li */
+        ul li:first-child {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Data:</h2>
+    <ul>
+        @foreach (var line in Model.FileContent.Split('\n'))
+        {
+            <li>@line</li>
+        }
+    </ul>
+</body>
+</html>
